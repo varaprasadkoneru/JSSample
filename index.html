@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script language="JavaScript" type="text/javascript>
+     var iCallID;
+     function InitializeService(){
+      service.useService("http://pbg1msg01s854/PRDataWS/PRDataService.asmx?WSDL", "HelloWorldService");
+      service.HelloWorldService.callService("GetPRUsers");
+     }
+     function ShowResult(){
+      alert(event.result.value);
+     }
+    </script>
+
+</head>
+<body onload="InitializeService()" id="service" style="behavior:url(webservice.htc)" onresult="ShowResult()">
+   
+</body>
+</html>
